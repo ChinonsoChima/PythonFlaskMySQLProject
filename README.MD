@@ -1,4 +1,4 @@
-# Project Description - Lesson 2
+# Project Description - Lesson 3
 This project is a homework assignment to teach how to get Pycharm setup with Docker, Flask, MySQL
 # Postman Screenshot
 ![postman request output](screenshots/postman.png)
