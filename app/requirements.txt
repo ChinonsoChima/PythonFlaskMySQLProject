@@ -1,4 +1,8 @@
 Flask
-simplejson
-flask-mysql
+Flask-mysql
+Flask-mysqldb
+PyMySQL
 mysql-connector
+Flask-WTF
+simplejson
+email-validator
