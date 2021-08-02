@@ -7,3 +7,5 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 * init.py
 * wsgi.py
 * routes.py
+# Part 6 of tutorial
+![app factory](screenshots/Screenshot%20(19).png)
