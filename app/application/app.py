@@ -10,12 +10,6 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 mysql = MySQL(cursorclass=DictCursor)
 
-#app.config['MYSQL_DATABASE_HOST'] = 'db'
-#app.config['MYSQL_DATABASE_USER'] = 'root'
-#app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-#app.config['MYSQL_DATABASE_PORT'] = 3306
-#app.config['MYSQL_DATABASE_DB'] = 'citiesData'
-#mysql.init_app(app)
 
 
 @app.route('/', methods=['GET'])

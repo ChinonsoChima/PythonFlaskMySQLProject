@@ -4,18 +4,22 @@ from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
 from flask import render_template
 from forms import ContactForm
+from flask import Blueprint
 
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 mysql = MySQL(cursorclass=DictCursor)
 
-#app.config['MYSQL_DATABASE_HOST'] = 'db'
-#app.config['MYSQL_DATABASE_USER'] = 'root'
-#app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-#app.config['MYSQL_DATABASE_PORT'] = 3306
-#app.config['MYSQL_DATABASE_DB'] = 'citiesData'
-#mysql.init_app(app)
+home_bp = Blueprint('home_bp', __name__, template_folder='templates')
+
+@home_bp.route('/', methods=['GET'])
+    def index():
+        user = {'username': 'Chino'}
+        cursor = mysql.get_db().cursor()
+        cursor.execute('SELECT * FROM citiesData.tblCitiesImport')
+        result = cursor.fetchall()
+        return render_template('index.html', title='Home', user=user, cities=result)
 
 
 @app.route('/', methods=['GET'])
